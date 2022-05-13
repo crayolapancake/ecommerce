@@ -1,22 +1,28 @@
 import React from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Routes, Route, Outlet } from 'react-router-dom';
 import './App.css';
-import Homepage from './pages/homepage/homepage';
+import Navigation from './routes/navigation/navigation.component';
+import Home from './routes/home/home.component';
 
-const HatsPage = () => (
-  <div>
-    <h1>Hats Page</h1>
-  </div>
-);
+const Shop = () => {
+  return (
+    <div>
+      <h1>I'm the shop</h1>
+    </div>
+  );
+};
 
 function App() {
   return (
-    <div className="App">
-      <Switch>
-        <Route exact path='/' component={Homepage} />
-        <Route path='/hats' component={HatsPage} />
-      </Switch>
-    </div>
+    <Routes>
+      {/* nav at top so it persists on all pages */}
+      <Route path='/' element={<Navigation />} >
+        {/* index means '/' */}
+        <Route index element={<Home />} />
+        <Route path='shop' element={<Shop />} />
+      </Route>
+    </Routes>
+
   );
 }
 
