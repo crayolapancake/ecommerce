@@ -1,5 +1,5 @@
 import React from 'react';
-import CategoryItem from '../categoryItem/categoryItem';
+import DirectoryItem from '../directory-item/directory-item.component.';
 import './directory.styles.scss';
 
 class Directory extends React.Component {
@@ -48,7 +48,7 @@ class Directory extends React.Component {
     return (
       <div className='directory-container'>
         {this.state.sections.map((category) => (
-          <CategoryItem key={category.id} category={category} />
+          <DirectoryItem key={category.id} category={category} />
         ))}
       </div>
     );

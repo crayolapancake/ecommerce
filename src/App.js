@@ -14,7 +14,8 @@ function App() {
       <Route path='/' element={<Navigation />} >
         {/* index means '/' */}
         <Route index element={<Home />} />
-        <Route path='shop' element={<Shop />} />
+        {/*     /* suffix allows nested navigation */}
+        <Route path='shop/*' element={<Shop />} />
         <Route path='auth' element={<Authentication />} />
         <Route path='checkout' element={<Checkout />} />
       </Route>
